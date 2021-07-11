@@ -7,17 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D0895D02686401900FC516E /* ChessTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0895CF2686401900FC516E /* ChessTimer.swift */; };
+		9D0895D22686411900FC516E /* SideDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0895D12686411900FC516E /* SideDisplay.swift */; };
+		9D0895D42686437000FC516E /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0895D32686437000FC516E /* TimeInterval.swift */; };
+		9D2D71A3268E08FD004DA3C5 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */; };
+		9D2D71A5268E094A004DA3C5 /* ChessClockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D71A4268E094A004DA3C5 /* ChessClockStore.swift */; };
 		9DB7F718267CDDB9003E92AB /* ChessClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F717267CDDB9003E92AB /* ChessClockApp.swift */; };
-		9DB7F71A267CDDB9003E92AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F719267CDDB9003E92AB /* ContentView.swift */; };
+		9DB7F71A267CDDB9003E92AB /* TimerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F719267CDDB9003E92AB /* TimerScreen.swift */; };
 		9DB7F71C267CDDBB003E92AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7F71B267CDDBB003E92AB /* Assets.xcassets */; };
 		9DB7F71F267CDDBB003E92AB /* PreviewAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB7F71E267CDDBB003E92AB /* PreviewAssets.xcassets */; };
-		9DB7F72F267D1C19003E92AB /* Concept_TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F72D267D1B5A003E92AB /* Concept_TimerView.swift */; };
+		9DF38A9A2689E8EF008E5CE3 /* TimerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF38A992689E8EF008E5CE3 /* TimerConfiguration.swift */; };
+		9DF38A9C2689E961008E5CE3 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF38A9B2689E961008E5CE3 /* Side.swift */; };
+		9DF38A9E268CEA21008E5CE3 /* TimerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF38A9D268CEA21008E5CE3 /* TimerState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9D0895CF2686401900FC516E /* ChessTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessTimer.swift; sourceTree = "<group>"; };
+		9D0895D12686411900FC516E /* SideDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDisplay.swift; sourceTree = "<group>"; };
+		9D0895D32686437000FC516E /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
+		9D2D71A4268E094A004DA3C5 /* ChessClockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockStore.swift; sourceTree = "<group>"; };
 		9DB7F714267CDDB8003E92AB /* ChessClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB7F717267CDDB9003E92AB /* ChessClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockApp.swift; sourceTree = "<group>"; };
-		9DB7F719267CDDB9003E92AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9DB7F719267CDDB9003E92AB /* TimerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreen.swift; sourceTree = "<group>"; };
 		9DB7F71B267CDDBB003E92AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DB7F71E267CDDBB003E92AB /* PreviewAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PreviewAssets.xcassets; sourceTree = "<group>"; };
 		9DB7F720267CDDBB003E92AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -25,7 +37,9 @@
 		9DB7F72A267CDF93003E92AB /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		9DB7F72B267CDF93003E92AB /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		9DB7F72C267CDFFC003E92AB /* .gitconfig */ = {isa = PBXFileReference; lastKnownFileType = folder; path = .gitconfig; sourceTree = "<group>"; };
-		9DB7F72D267D1B5A003E92AB /* Concept_TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concept_TimerView.swift; sourceTree = "<group>"; };
+		9DF38A992689E8EF008E5CE3 /* TimerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfiguration.swift; sourceTree = "<group>"; };
+		9DF38A9B2689E961008E5CE3 /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
+		9DF38A9D268CEA21008E5CE3 /* TimerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +76,17 @@
 			isa = PBXGroup;
 			children = (
 				9DB7F717267CDDB9003E92AB /* ChessClockApp.swift */,
-				9DB7F719267CDDB9003E92AB /* ContentView.swift */,
+				9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */,
+				9DB7F719267CDDB9003E92AB /* TimerScreen.swift */,
+				9D0895D12686411900FC516E /* SideDisplay.swift */,
 				9DB7F71B267CDDBB003E92AB /* Assets.xcassets */,
 				9DB7F71D267CDDBB003E92AB /* PreviewContent */,
+				9D2D71A4268E094A004DA3C5 /* ChessClockStore.swift */,
+				9D0895CF2686401900FC516E /* ChessTimer.swift */,
+				9DF38A992689E8EF008E5CE3 /* TimerConfiguration.swift */,
+				9DF38A9D268CEA21008E5CE3 /* TimerState.swift */,
+				9DF38A9B2689E961008E5CE3 /* Side.swift */,
+				9D0895D32686437000FC516E /* TimeInterval.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -99,7 +121,6 @@
 		9DB7F72E267D1BAF003E92AB /* poc */ = {
 			isa = PBXGroup;
 			children = (
-				9DB7F72D267D1B5A003E92AB /* Concept_TimerView.swift */,
 			);
 			path = poc;
 			sourceTree = "<group>";
@@ -173,9 +194,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DB7F71A267CDDB9003E92AB /* ContentView.swift in Sources */,
+				9DB7F71A267CDDB9003E92AB /* TimerScreen.swift in Sources */,
+				9D0895D22686411900FC516E /* SideDisplay.swift in Sources */,
 				9DB7F718267CDDB9003E92AB /* ChessClockApp.swift in Sources */,
-				9DB7F72F267D1C19003E92AB /* Concept_TimerView.swift in Sources */,
+				9D0895D02686401900FC516E /* ChessTimer.swift in Sources */,
+				9D2D71A3268E08FD004DA3C5 /* Dashboard.swift in Sources */,
+				9DF38A9C2689E961008E5CE3 /* Side.swift in Sources */,
+				9DF38A9A2689E8EF008E5CE3 /* TimerConfiguration.swift in Sources */,
+				9D0895D42686437000FC516E /* TimeInterval.swift in Sources */,
+				9D2D71A5268E094A004DA3C5 /* ChessClockStore.swift in Sources */,
+				9DF38A9E268CEA21008E5CE3 /* TimerState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
