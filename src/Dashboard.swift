@@ -2,7 +2,7 @@ import SwiftUI
 
 fileprivate struct BarItemsModifier: ViewModifier {
 
-  @EnvironmentObject var store: ChessClockStore
+  @EnvironmentObject var store: TimelyStore
 
   @State var showNew = false
 
@@ -35,7 +35,7 @@ fileprivate extension View {
 
 struct Dashboard: View {
 
-  @EnvironmentObject var store: ChessClockStore
+  @EnvironmentObject var store: TimelyStore
 
   var body: some View {
     TabView(selection: .constant(0)) {
@@ -88,6 +88,6 @@ struct Dashboard: View {
 struct Dashboard_Previews: PreviewProvider {
   static var previews: some View {
     Dashboard()
-    .environmentObject(ChessClockStore.init())
+    .environmentObject(TimelyStore.init())
   }
 }

@@ -14,7 +14,7 @@ struct ConfigForm: View {
   @State var delayType: TimerConfiguration.DelayType
   @State var delayFirstMove: Bool
 
-  @EnvironmentObject var store: ChessClockStore
+  @EnvironmentObject var store: TimelyStore
   @Environment(\.presentationMode) var presentationMode
 
   init(_ existingConfig: TimerConfiguration) {

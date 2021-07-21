@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-class ChessClockStore: ObservableObject {
+class TimelyStore: ObservableObject {
 
   @Published var showDashboard = false
   @Published var showOverlay = false

@@ -1,9 +1,9 @@
 import SwiftUI
 
 @main
-struct ChessClockApp: App {
+struct TimelyApp: App {
 
-  @StateObject var store = ChessClockStore()
+  @StateObject var store = TimelyStore()
 
   var body: some Scene {
     WindowGroup {
