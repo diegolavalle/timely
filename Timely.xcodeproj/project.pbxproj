@@ -61,6 +61,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9D1FB7A326A82B4700935791 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9D0895CF2686401900FC516E /* ChessTimer.swift */,
+				9DF38A9B2689E961008E5CE3 /* Side.swift */,
+				9D0895D32686437000FC516E /* TimeInterval.swift */,
+				9DB7F717267CDDB9003E92AB /* TimelyApp.swift */,
+				9D2D71A4268E094A004DA3C5 /* TimelyStore.swift */,
+				9DF38A992689E8EF008E5CE3 /* TimerConfiguration.swift */,
+				9DF38A9D268CEA21008E5CE3 /* TimerState.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		9DB7F70B267CDDB8003E92AB = {
 			isa = PBXGroup;
 			children = (
@@ -83,22 +97,16 @@
 		9DB7F716267CDDB9003E92AB /* src */ = {
 			isa = PBXGroup;
 			children = (
-				9DB7F717267CDDB9003E92AB /* TimelyApp.swift */,
-				9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */,
+				9D1FB7A326A82B4700935791 /* model */,
 				9D1FB79B26A03F6800935791 /* ConfigBox.swift */,
+				9D1FB7A126A1A19B00935791 /* ConfigForm.swift */,
 				9D1FB79D26A09F3900935791 /* ConfigSummary.swift */,
+				9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */,
 				9D1FB79F26A0A06100935791 /* MovesSummary.swift */,
-				9DB7F719267CDDB9003E92AB /* TimerScreen.swift */,
 				9D0895D12686411900FC516E /* SideDisplay.swift */,
+				9DB7F719267CDDB9003E92AB /* TimerScreen.swift */,
 				9DB7F71B267CDDBB003E92AB /* Assets.xcassets */,
 				9DB7F71D267CDDBB003E92AB /* PreviewContent */,
-				9D2D71A4268E094A004DA3C5 /* TimelyStore.swift */,
-				9D0895CF2686401900FC516E /* ChessTimer.swift */,
-				9DF38A992689E8EF008E5CE3 /* TimerConfiguration.swift */,
-				9DF38A9D268CEA21008E5CE3 /* TimerState.swift */,
-				9DF38A9B2689E961008E5CE3 /* Side.swift */,
-				9D0895D32686437000FC516E /* TimeInterval.swift */,
-				9D1FB7A126A1A19B00935791 /* ConfigForm.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
