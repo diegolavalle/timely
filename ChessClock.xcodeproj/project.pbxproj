@@ -10,6 +10,10 @@
 		9D0895D02686401900FC516E /* ChessTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0895CF2686401900FC516E /* ChessTimer.swift */; };
 		9D0895D22686411900FC516E /* SideDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0895D12686411900FC516E /* SideDisplay.swift */; };
 		9D0895D42686437000FC516E /* TimeInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0895D32686437000FC516E /* TimeInterval.swift */; };
+		9D1FB79C26A03F6800935791 /* ConfigBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FB79B26A03F6800935791 /* ConfigBox.swift */; };
+		9D1FB79E26A09F3900935791 /* ConfigSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FB79D26A09F3900935791 /* ConfigSummary.swift */; };
+		9D1FB7A026A0A06100935791 /* MovesSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FB79F26A0A06100935791 /* MovesSummary.swift */; };
+		9D1FB7A226A1A19B00935791 /* ConfigForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1FB7A126A1A19B00935791 /* ConfigForm.swift */; };
 		9D2D71A3268E08FD004DA3C5 /* Dashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */; };
 		9D2D71A5268E094A004DA3C5 /* ChessClockStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D2D71A4268E094A004DA3C5 /* ChessClockStore.swift */; };
 		9DB7F718267CDDB9003E92AB /* ChessClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DB7F717267CDDB9003E92AB /* ChessClockApp.swift */; };
@@ -25,6 +29,10 @@
 		9D0895CF2686401900FC516E /* ChessTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessTimer.swift; sourceTree = "<group>"; };
 		9D0895D12686411900FC516E /* SideDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideDisplay.swift; sourceTree = "<group>"; };
 		9D0895D32686437000FC516E /* TimeInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeInterval.swift; sourceTree = "<group>"; };
+		9D1FB79B26A03F6800935791 /* ConfigBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigBox.swift; sourceTree = "<group>"; };
+		9D1FB79D26A09F3900935791 /* ConfigSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSummary.swift; sourceTree = "<group>"; };
+		9D1FB79F26A0A06100935791 /* MovesSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovesSummary.swift; sourceTree = "<group>"; };
+		9D1FB7A126A1A19B00935791 /* ConfigForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigForm.swift; sourceTree = "<group>"; };
 		9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		9D2D71A4268E094A004DA3C5 /* ChessClockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockStore.swift; sourceTree = "<group>"; };
 		9DB7F714267CDDB8003E92AB /* ChessClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +85,9 @@
 			children = (
 				9DB7F717267CDDB9003E92AB /* ChessClockApp.swift */,
 				9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */,
+				9D1FB79B26A03F6800935791 /* ConfigBox.swift */,
+				9D1FB79D26A09F3900935791 /* ConfigSummary.swift */,
+				9D1FB79F26A0A06100935791 /* MovesSummary.swift */,
 				9DB7F719267CDDB9003E92AB /* TimerScreen.swift */,
 				9D0895D12686411900FC516E /* SideDisplay.swift */,
 				9DB7F71B267CDDBB003E92AB /* Assets.xcassets */,
@@ -87,6 +98,7 @@
 				9DF38A9D268CEA21008E5CE3 /* TimerState.swift */,
 				9DF38A9B2689E961008E5CE3 /* Side.swift */,
 				9D0895D32686437000FC516E /* TimeInterval.swift */,
+				9D1FB7A126A1A19B00935791 /* ConfigForm.swift */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -200,9 +212,13 @@
 				9D0895D02686401900FC516E /* ChessTimer.swift in Sources */,
 				9D2D71A3268E08FD004DA3C5 /* Dashboard.swift in Sources */,
 				9DF38A9C2689E961008E5CE3 /* Side.swift in Sources */,
+				9D1FB79C26A03F6800935791 /* ConfigBox.swift in Sources */,
 				9DF38A9A2689E8EF008E5CE3 /* TimerConfiguration.swift in Sources */,
+				9D1FB7A226A1A19B00935791 /* ConfigForm.swift in Sources */,
 				9D0895D42686437000FC516E /* TimeInterval.swift in Sources */,
+				9D1FB79E26A09F3900935791 /* ConfigSummary.swift in Sources */,
 				9D2D71A5268E094A004DA3C5 /* ChessClockStore.swift in Sources */,
+				9D1FB7A026A0A06100935791 /* MovesSummary.swift in Sources */,
 				9DF38A9E268CEA21008E5CE3 /* TimerState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

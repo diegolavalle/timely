@@ -10,7 +10,7 @@ extension TimeInterval {
     let hours = Int(self / Self.secondsInHour)
     let minutes = Int(self / Self.secondsInMinute) - hours * Int(Self.minutesInHour)
     let seconds = Int(self) - hours * Int(Self.secondsInHour) - minutes * Int(Self.secondsInMinute)
-    let secondsAsDouble = self - Double(hours) * Self.secondsInHour - Double(minutes) * Self.secondsInMinute
+    let secondsAsDouble = (self * 10).rounded(.up) / 10 - Double(hours) * Self.secondsInHour - Double(minutes) * Self.secondsInMinute
 
     if hours > 0 {
       return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
@@ -19,5 +19,21 @@ extension TimeInterval {
     } else {
       return String(format: "%02d:%04.1f", minutes, secondsAsDouble)
     }
+  }
+
+  var formattedSummary: String {
+    let hours = Int(self / Self.secondsInHour)
+    let minutes = Int(self / Self.secondsInMinute) - hours * Int(Self.minutesInHour)
+    let seconds = Int(self) - hours * Int(Self.secondsInHour) - minutes * Int(Self.secondsInMinute)
+
+    if hours > 0 {
+      return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    } else {
+      return String(format: "%02d:%02d", minutes, seconds)
+    }
+  }
+
+  var formattedSeconds: String {
+    String(format: "%d", Int(rounded(.up)))
   }
 }

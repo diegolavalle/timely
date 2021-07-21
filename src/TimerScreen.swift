@@ -8,12 +8,12 @@ struct TimerScreen: View {
   @State var showInfo = true
   @State var showHelp = false
 
-  var status: TimerStatus {
-    timer.state.status
+  var state: TimerState {
+    timer.state
   }
 
-  var firstMoversTurn: Bool {
-    timer.state.moves.isMultiple(of: 2)
+  var status: TimerStatus {
+    state.status
   }
 
   var body: some View {
@@ -33,13 +33,13 @@ struct TimerScreen: View {
         alignment: .leading,
         spacing: 0
       ) {
-        SideDisplay(config: timer.config, state: timer.state, side: timer.config.side.counterPart, showInfo: showInfo)
-        .frame(height: getHeight(p, active: !firstMoversTurn))
-        .rotationEffect(isPortrait(p) ? .radians(.pi) : .zero)
+        SideDisplay(state: timer.state, side: timer.config.side.counterPart, showInfo: showInfo)
+        .frame(height: getHeight(p, active: !state.firstMoversTurn))
+        .rotationEffect(isPortrait(p) ? .radians(.pi) : .zero) // TODO: .radians(2 * .pi) or .radians(2 * .pi - 1) when in reverse landscape (rotated right)
         .offset(isPortrait(p) ? .zero : .init(width: p.size.width / 2, height: 0))
 
-        SideDisplay(config: timer.config, state: timer.state, side: timer.config.side, showInfo: showInfo)
-        .frame(height: getHeight(p, active: firstMoversTurn))
+        SideDisplay(state: timer.state, side: timer.config.side, showInfo: showInfo)
+        .frame(height: getHeight(p, active: state.firstMoversTurn))
         .offset(isPortrait(p) ? .zero : .init(width: -p.size.width / 2, height: 0))
       }
       .animation(.default)

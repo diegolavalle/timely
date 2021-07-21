@@ -1,8 +1,14 @@
-enum Side: String {
+enum Side: Int, CaseIterable, Identifiable, Codable {
   case whites, blacks
 
+  static let `default` = Side(rawValue: 0)!
+
+  var id: Int {
+    rawValue
+  }
+  
   var counterPart: Self {
-    self == .whites ? .blacks : .whites
+    Side(rawValue: (rawValue + 1) % Self.allCases.count)!
   }
 
   mutating func toggle() {
@@ -12,6 +18,6 @@ enum Side: String {
 
 extension Side: CustomStringConvertible {
   var description: String {
-    rawValue.capitalized
+    self == .whites ? "⚪️" : "⚫️"
   }
 }

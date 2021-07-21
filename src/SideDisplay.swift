@@ -1,10 +1,13 @@
 import SwiftUI
 
 struct SideDisplay: View {
-  let config: TimerConfiguration
   let state: TimerState
   let side: Side
   let showInfo: Bool
+
+  var config: TimerConfiguration {
+    state.config
+  }
 
   var status: TimerStatus {
     state.status
@@ -14,12 +17,8 @@ struct SideDisplay: View {
     state.moves
   }
 
-  var firstMover: Bool {
-    side == config.side
-  }
-
   var playersTurn: Bool {
-    (firstMover && moves.isMultiple(of: 2)) || (!firstMover && !moves.isMultiple(of: 2))
+    state.moving(side)
   }
 
   var actionNeeded: Bool {
@@ -39,7 +38,7 @@ struct SideDisplay: View {
   }
 
   var time: TimeInterval {
-    firstMover ? state.timeRemaining.0 : state.timeRemaining.1
+    state.time(for: side)
   }
 
   var message: String? {
@@ -61,21 +60,43 @@ struct SideDisplay: View {
   var body: some View {
     VStack {
       Spacer()
-      VStack {
-        Text(side.description)
-        .opacity(showInfo ? 1 : 0)
+      VStack(spacing: 16) {
 
-        HStack {
-          Text(time.formatted)
-          if status == .expired {
-            Image(systemName: won ? "hands.clap.fill" : "flag.fill")
-          }
+        if moving && config.delay > 0 && state.delay > 0 {
+          Text(state.delay.formattedSeconds)
+          .font(Font.system(.title, design: .monospaced))
+          .frame(minWidth: 40, alignment: .center)
+          .padding()
+          .background(Color.secondary)
+          .blendMode(.overlay)
+          .colorInvert()
+          .transition(.scale)
         }
-        .font(Font.system(.title, design: .monospaced))
-        Text("Total moves: \(moves)")
+
+        if config.time > 0 || state.status == .expired {
+          HStack {
+            Text(config.hourglass && !playersTurn ? time.formattedSummary : time.formatted).bold()
+            if status == .expired {
+              Image(systemName: won ? "hands.clap.fill" : "flag.fill")
+            }
+          }
+          .font(Font.system(state.delay > 0 ? .title3 : .title, design: .monospaced))
+        }
+
+        VStack(spacing: 8) {
+          HStack(alignment: .firstTextBaseline) {
+            Text(side.description)
+            MovesSummary(state: state, firstMover: state.firstMover(side), moving: moving)
+          }
+          .font(.callout)
+
+          ConfigSummary(config: config)
+        }
         .opacity(showInfo ? 1 : 0)
+        
       }
       .padding()
+      
       Spacer()
       if let message = message {
         VStack {
@@ -97,7 +118,8 @@ struct SideDisplay_Previews: PreviewProvider {
   static let timer = ChessTimer(.init(time: 55))
   static var previews: some View {
     Group {
-      SideDisplay(config: timer.config, state: timer.state, side: timer.config.side, showInfo: true)
+      SideDisplay(state: timer.state, side: timer.config.side, showInfo: true)
+      .frame(maxHeight: 300)
     }
     .previewLayout(.sizeThatFits)
   }
