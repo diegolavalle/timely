@@ -35,7 +35,7 @@
 		9D1FB7A126A1A19B00935791 /* ConfigForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigForm.swift; sourceTree = "<group>"; };
 		9D2D71A2268E08FD004DA3C5 /* Dashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dashboard.swift; sourceTree = "<group>"; };
 		9D2D71A4268E094A004DA3C5 /* ChessClockStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockStore.swift; sourceTree = "<group>"; };
-		9DB7F714267CDDB8003E92AB /* ChessClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChessClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB7F714267CDDB8003E92AB /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB7F717267CDDB9003E92AB /* ChessClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChessClockApp.swift; sourceTree = "<group>"; };
 		9DB7F719267CDDB9003E92AB /* TimerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerScreen.swift; sourceTree = "<group>"; };
 		9DB7F71B267CDDBB003E92AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		9DB7F715267CDDB8003E92AB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DB7F714267CDDB8003E92AB /* ChessClock.app */,
+				9DB7F714267CDDB8003E92AB /* Timely.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +140,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9DB7F713267CDDB8003E92AB /* ChessClock */ = {
+		9DB7F713267CDDB8003E92AB /* Timely */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DB7F723267CDDBB003E92AB /* Build configuration list for PBXNativeTarget "ChessClock" */;
+			buildConfigurationList = 9DB7F723267CDDBB003E92AB /* Build configuration list for PBXNativeTarget "Timely" */;
 			buildPhases = (
 				9DB7F710267CDDB8003E92AB /* Sources */,
 				9DB7F711267CDDB8003E92AB /* Frameworks */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = ChessClock;
+			name = Timely;
 			productName = ChessClock;
-			productReference = 9DB7F714267CDDB8003E92AB /* ChessClock.app */;
+			productReference = 9DB7F714267CDDB8003E92AB /* Timely.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -184,7 +184,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DB7F713267CDDB8003E92AB /* ChessClock */,
+				9DB7F713267CDDB8003E92AB /* Timely */,
 			);
 		};
 /* End PBXProject section */
@@ -402,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DB7F723267CDDBB003E92AB /* Build configuration list for PBXNativeTarget "ChessClock" */ = {
+		9DB7F723267CDDBB003E92AB /* Build configuration list for PBXNativeTarget "Timely" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DB7F724267CDDBB003E92AB /* Debug */,
