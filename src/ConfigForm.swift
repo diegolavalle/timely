@@ -21,12 +21,12 @@ struct ConfigForm: View {
     id = existingConfig.id
     _name = State(initialValue: existingConfig.name ?? "")
     _side = State(initialValue: existingConfig.side)
-    _hours = State(initialValue: 0)
-    _minutes = State(initialValue: 0)
-    _seconds = State(initialValue: 0)
+    _hours = State(initialValue: existingConfig.time.hoursOnly)
+    _minutes = State(initialValue: existingConfig.time.minutesOnly)
+    _seconds = State(initialValue: existingConfig.time.secondsOnly)
     _hourglass = State(initialValue: existingConfig.hourglass)
     _suddenDeath = State(initialValue: existingConfig.suddenDeath)
-    _delay = State(initialValue: 0)
+    _delay = State(initialValue: existingConfig.delay.inSecondsRounded)
     _delayType = State(initialValue: existingConfig.delayType)
     _delayFirstMove = State(initialValue: false)
   }
@@ -77,9 +77,9 @@ struct ConfigForm: View {
       }
       Section(header: Label("Time", systemImage: "clock")) {
         Group {
-          Stepper("\(hours)h", value: $hours, in: 0 ... 35)
-          Stepper("\(minutes)'", value: $minutes, in: 0 ... 60)
-          Stepper("\(seconds)''", value: $seconds, in: 0 ... 60)
+          Stepper("\(hours)h", value: $hours, in: 0 ... 24)
+          Stepper("\(minutes)'", value: $minutes, in: 0 ... 59)
+          Stepper("\(seconds)''", value: $seconds, in: 0 ... 59)
         }
         .disabled(suddenDeath)
       }

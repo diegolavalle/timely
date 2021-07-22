@@ -35,7 +35,9 @@ struct TimerScreen: View {
       ) {
         SideDisplay(state: timer.state, side: timer.config.side.counterPart, showInfo: showInfo)
         .frame(height: getHeight(p, active: !state.firstMoversTurn))
-        .rotationEffect(isPortrait(p) ? .radians(.pi) : .zero) // TODO: .radians(2 * .pi) or .radians(2 * .pi - 1) when in reverse landscape (rotated right)
+        .rotationEffect(isPortrait(p) ? .radians(.pi) : .radians(2 * .pi))
+        // … : .radians(2 * .pi) better than .zero for rotating clockwise.
+        // TODO: replace with … : .zero when in reverse landscape (rotated counter-clockwise)
         .offset(isPortrait(p) ? .zero : .init(width: p.size.width / 2, height: 0))
 
         SideDisplay(state: timer.state, side: timer.config.side, showInfo: showInfo)
@@ -72,30 +74,7 @@ struct TimerScreen: View {
     ZStack {
       Color(.systemBackground).opacity(0.75)
       if showHelp {
-        VStack(alignment: .leading, spacing: 16) {
-          Spacer()
-          HStack {
-            Text("Quick Help: Gestures")
-            Spacer()
-            Button {
-              withAnimation {
-                showHelp.toggle()
-              }
-            } label: {
-              Label("Back", systemImage: "chevron.backward.circle.fill")
-            }
-          }
-          .font(.title)
-  
-          Group {
-            Text("Double-tap").bold() + Text(" - While on the clock, use on any part of the screen to start the game, end your turn or resume after pause. This gesture also resets the clock after it expires.")
-            Text("Tap").bold() + Text(" - Single tap toggles between \"zen\" mode and displaying additional info such as total moves. This includes helpful messages while zen mode shows the remaining times only.")
-            Text("Tap and hold").bold() + Text(" - Pauses the clock and brigns up the options menu. From there you can also go back to the main dashboard. You'll be able to return from the dashboard keeping the clock's state.")
-          }
-          Spacer()
-        }
-        .padding()
-        .transition(.scale)
+        helpBody
       } else {
         VStack {
           Spacer()
@@ -160,6 +139,33 @@ struct TimerScreen: View {
       }
     }
     .opacity(overlayToggle ? 1 : 0)
+  }
+
+  var helpBody: some View {
+    VStack(alignment: .leading, spacing: 16) {
+      Spacer()
+      HStack {
+        Text("Quick Help: Gestures")
+        Spacer()
+        Button {
+          withAnimation {
+            showHelp.toggle()
+          }
+        } label: {
+          Label("Back", systemImage: "chevron.backward.circle.fill")
+        }
+      }
+      .font(.title)
+
+      Group {
+        Text("Double-tap").bold() + Text(" - While on the clock, use on any part of the screen to start the game, end your turn or resume after pause. This gesture also resets the clock after it expires.")
+        Text("Tap").bold() + Text(" - Single tap toggles between \"zen\" mode and displaying additional info such as total moves. This includes helpful messages while zen mode shows the remaining times only.")
+        Text("Tap and hold").bold() + Text(" - Pauses the clock and brigns up the options menu. From there you can also go back to the main dashboard. You'll be able to return from the dashboard keeping the clock's state.")
+      }
+      Spacer()
+    }
+    .padding()
+    .transition(.scale)
   }
 
   var gestureArea: some View {

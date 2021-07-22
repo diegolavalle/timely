@@ -6,34 +6,41 @@ extension TimeInterval {
   static let secondsInMinute = 60.0
   static let minutesInHour = 60.0
 
-  var formatted: String {
-    let hours = Int(self / Self.secondsInHour)
-    let minutes = Int(self / Self.secondsInMinute) - hours * Int(Self.minutesInHour)
-    let seconds = Int(self) - hours * Int(Self.secondsInHour) - minutes * Int(Self.secondsInMinute)
-    let secondsAsDouble = (self * 10).rounded(.up) / 10 - Double(hours) * Self.secondsInHour - Double(minutes) * Self.secondsInMinute
+  var hoursOnly: Int {
+    Int(self / Self.secondsInHour)
+  }
 
-    if hours > 0 {
-      return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    } else if minutes > 0 || self == 0 {
-      return String(format: "%02d:%02d", minutes, seconds)
-    } else {
-      return String(format: "%02d:%04.1f", minutes, secondsAsDouble)
-    }
+  var minutesOnly: Int {
+    Int(self / Self.secondsInMinute) - hoursOnly * Int(Self.minutesInHour)
+  }
+
+  var secondsOnly: Int {
+    Int(self) - hoursOnly * Int(Self.secondsInHour) - minutesOnly * Int(Self.secondsInMinute)
   }
 
   var formattedSummary: String {
-    let hours = Int(self / Self.secondsInHour)
-    let minutes = Int(self / Self.secondsInMinute) - hours * Int(Self.minutesInHour)
-    let seconds = Int(self) - hours * Int(Self.secondsInHour) - minutes * Int(Self.secondsInMinute)
-
-    if hours > 0 {
-      return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    if hoursOnly > 0 {
+      return String(format: "%02d:%02d:%02d", hoursOnly, minutesOnly, secondsOnly)
     } else {
-      return String(format: "%02d:%02d", minutes, seconds)
+      return String(format: "%02d:%02d", minutesOnly, secondsOnly)
     }
   }
 
+  var formatted: String {
+    let secondsAsDouble = (self * 10).rounded(.up) / 10 - Double(hoursOnly) * Self.secondsInHour - Double(minutesOnly) * Self.secondsInMinute
+
+    if hoursOnly > 0 || minutesOnly > 0 || self == 0 {
+      return formattedSummary
+    } else {
+      return String(format: "%02d:%04.1f", minutesOnly, secondsAsDouble)
+    }
+  }
+
+  var inSecondsRounded: Int {
+    Int(rounded(.up))
+  }
+
   var formattedSeconds: String {
-    String(format: "%d", Int(rounded(.up)))
+    String(format: "%d", inSecondsRounded)
   }
 }

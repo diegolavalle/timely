@@ -9,6 +9,7 @@ struct TimelyApp: App {
     WindowGroup {
       ZStack {
         TimerScreen(timer: store.timer, dashboardToggle: $store.showDashboard)
+        .opacity(store.showDashboard ? 0 : 1) // To hide during transition animation
 
         if store.showDashboard {
           Dashboard()

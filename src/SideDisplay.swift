@@ -62,12 +62,12 @@ struct SideDisplay: View {
       Spacer()
       VStack(spacing: 16) {
 
-        if moving && config.delay > 0 && state.delay > 0 {
-          Text(state.delay.formattedSeconds)
+        if config.delay > 0 && status != .expired && (config.suddenDeath || (playersTurn && state.delay > 0 && status != .ready)) {
+          Text(playersTurn ? state.delay.formattedSeconds : config.delay.formattedSeconds)
           .font(Font.system(.title, design: .monospaced))
           .frame(minWidth: 40, alignment: .center)
           .padding()
-          .background(Color.secondary)
+          .background(playersTurn ? Color.secondary : nil)
           .blendMode(.overlay)
           .colorInvert()
           .transition(.scale)

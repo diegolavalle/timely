@@ -5,6 +5,8 @@ struct ConfigBox: View {
   let config: TimerConfiguration
   @Binding var timer: ChessTimer
   @Binding var dashboardToggle: Bool
+  @State var showEdit = false
+  @EnvironmentObject var store: TimelyStore
 
   var body: some View {
     VStack(spacing: 8) {
@@ -30,12 +32,16 @@ struct ConfigBox: View {
         }
       }
       HStack {
-        /*
         Button {
+          showEdit.toggle()
         } label: {
           Label("Edit", systemImage: "pencil.circle.fill")
         }
-        */
+        .sheet(isPresented: $showEdit) {
+          ConfigForm(config)
+          .environmentObject(store)
+        }
+
         Button {
           timer = ChessTimer(config)
           dashboardToggle.toggle()
