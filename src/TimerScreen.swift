@@ -23,7 +23,7 @@ struct TimerScreen: View {
       optionsOverlay
     }
     .statusBar(hidden: overlayToggle ? false : true)
-    .ignoresSafeArea(.container, edges: .top)
+    .ignoresSafeArea(.container, edges: .vertical)
   }
 
   var displaysBody: some View {
